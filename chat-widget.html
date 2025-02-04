@@ -6,20 +6,23 @@
     <title>Chat Widget</title>
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
     <style>
-        /* Ensure the chat widget fills the entire iframe */
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        #chat-container {
-            width: 100%;
-            height: 100vh; /* Full height of the iframe */
+        /* Style for the chat widget container */
+        #floating-chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            border: none;
+            z-index: 1000; /* Ensure it stays on top of other content */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            background: white; /* Add a background color if needed */
         }
     </style>
 </head>
 <body>
-    <div id="chat-container">
+    <div id="floating-chat-widget">
         <script type="module">
             import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
